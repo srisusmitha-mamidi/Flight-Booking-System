@@ -16,14 +16,14 @@ class Flight:
         self.classes.append(
                 Classes(
                     class_name='FirstClass',
-                    class_no=1,
+                    class_no=2,
                     no_of_seats=self.total_seats*(40/100)
                 ).build()
             )
         self.classes.append(
                 Classes(
                     class_name='BusinessClass',
-                    class_no=1,
+                    class_no=3,
                     no_of_seats=self.total_seats*(20/100)
                 ).build()
             )
