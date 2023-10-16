@@ -1,0 +1,8 @@
+class Seat:
+    def __init__(self,seat_no,seat_in_class,position):
+        self.seat_no=seat_no
+        self.status='Available'
+        self.position=position
+        self.seat_in_class=seat_in_class
+    def is_available(self):
+        return True if self.status=='Available' else False
