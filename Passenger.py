@@ -1,6 +1,6 @@
 class Passenger:
     def __init__(self):
-        pass
+        self.passengers=[]
     
     def set_name(self, name):
         self.name = name
@@ -17,6 +17,8 @@ class Passenger:
     def set_class_preference(self,pref):
         self.class_preference=pref
         return self
+        
+        
 
     def __str__(self):
         return f"{self.name} - {self.age} - {self.seat_preference} - {self.class_preference}"
