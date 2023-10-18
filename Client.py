@@ -9,9 +9,9 @@ def main():
     p1.set_class_preference("EconomyClass").set_seat_preference("Window").set_age(22).set_name("Ajay")
     user1=User("Vijay")
     user1.add_passengers(p1)
-    user1.book_seats(flight)
-    '''bookings=Bookings()
-    bookings.add_bookings(ticket)'''
+    ticket = user1.book_seats(flight)
+    bookings=Bookings()
+    bookings.add_bookings(ticket)
     
     print('Hello')
     
