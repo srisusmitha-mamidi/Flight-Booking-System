@@ -10,10 +10,12 @@ def main():
     user1=User("Vijay")
     user1.add_passengers(p1)
     ticket = user1.book_seats(flight)
+    #print(ticket) #separate ticket data will be shown
     bookings=Bookings()
     bookings.add_bookings(ticket)
+    bookings.show_bookings() #all the bookings will be shown
     
-    print('Hello')
+    #print('Hello')
     
 if __name__ == '__main__':
     main()

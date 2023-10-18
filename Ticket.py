@@ -16,3 +16,10 @@ class Ticket:
         self.ticket_metadata["seat_no"].append(seat_no)
         self.ticket_metadata["position"].append(position)
         self.ticket_metadata["status"].append(status)
+    
+    def __str__(self):
+        print(f"PNR - {self.pnr} Train No. {self.train_no}")
+        for i in range(len(self.ticket_metadata["passenger"])):
+            print(f'{self.ticket_metadata["passenger"][i]}')
+            print(f'{self.ticket_metadata["status"][i]} - {self.ticket_metadata["class_name"][i]}/{self.ticket_metadata["seat_no"][i]}/{self.ticket_metadata["position"][i]}')
+        return ''
