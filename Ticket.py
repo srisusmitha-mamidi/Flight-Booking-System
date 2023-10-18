@@ -16,6 +16,22 @@ class Ticket:
         self.ticket_metadata["seat_no"].append(seat_no)
         self.ticket_metadata["position"].append(position)
         self.ticket_metadata["status"].append(status)
+        
+    def remove_cancelled_passengers(self,passenger):
+        for i in range(len(self.ticket_metadata["passenger"])):
+            if self.ticket_metadata["passenger"][i]==passenger:
+                del self.ticket_metadata["passenger"][i]
+                del self.ticket_metadata["class_name"][i]
+                del self.ticket_metadata["seat_no"][i]
+                del self.ticket_metadata["position"][i]
+                del self.ticket_metadata["status"][i]
+                return 
+        
+    def get_seat_no(self,passenger):
+        for i in range(len(self.ticket_metadata["passenger"])):
+            if self.ticket_metadata["passenger"][i]==passenger:
+                return self.ticket_metadata["seat_no"][i]
+        
     
     def __str__(self):
         print(f"PNR - {self.pnr} Train No. {self.train_no}")

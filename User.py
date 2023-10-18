@@ -23,6 +23,16 @@ class User:
                 else:
                     return 'Seats are not available in your preferred class'
         return ticket
+    def cancel_seats(self,flight,passenger,ticket):
+        for psngr in self.passengers:
+            if psngr.name==passenger.name:
+                class_pref = psngr.class_preference
+                seat_pref = psngr.seat_preference
+                seat_no=ticket.get_seat_no(passenger)
+                flight.release_cancelled_seats(class_pref,seat_pref,seat_no)
+                ticket.remove_cancelled_passengers(psngr)
+        return ticket
+        
                 
                         
                     

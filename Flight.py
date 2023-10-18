@@ -58,7 +58,7 @@ class Flight:
                         seat.status='Booked'
                         clas.no_of_seats-=1
                         clas.booked_seats+=1
-                        return (clas.class_name,clas.class_no,seat.position)
+                        return (clas.class_name,seat.seat_no,seat.position)
         elif class_pref:
             for clas in self.classes:
                 for seat in clas.seats:
@@ -66,7 +66,18 @@ class Flight:
                         seat.status='Booked'
                         clas.no_of_seats-=1
                         clas.booked_seats+=1
-                        return (clas.class_name,clas.class_no,seat.position)
+                        return (clas.class_name,seat.seat_no,seat.position)
+    def release_cancelled_seats(self,class_pref,seat_pref,seat_no):
+        for clas in self.classes:
+            if clas.class_name==class_pref:
+                for seat in clas.seats:
+                    if seat.status=='Booked' and seat.position==seat_pref and seat.seat_no==seat_no:
+                        seat.status='Available'
+                        clas.no_of_seats+=1
+                        clas.booked_seats-=1
+                        self.total_seats+=1
+        
+        
                         
                         
                         
