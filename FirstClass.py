@@ -1,10 +1,11 @@
 from Seat import Seat
 class FirstClass:
-    def __init__(self,class_name,class_no,no_of_seats,status):
+    def __init__(self,class_name,class_no,no_of_seats):
         self.class_name=class_name
         self.class_no=class_no
         self.no_of_seats=no_of_seats
-        self.status=status
+        self.status='Available'
+        self.booked_seats=0
     def build(self):
         self.seats=[]
         k=1
@@ -12,16 +13,14 @@ class FirstClass:
             self.seats.append(
                 Seat(
                     seat_no=k,
-                    position='Window',
-                    seat_in_class='FirstClass'                    
+                    position='Window',               
                 )
             )
             k+=1
             self.seats.append(
                 Seat(
                     seat_no=k,
-                    position='Aisle',
-                    seat_in_class='FirstClass'                    
+                    position='Aisle',             
                 )
             )
             k+=1

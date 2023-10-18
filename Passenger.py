@@ -1,6 +1,6 @@
 class Passenger:
     def __init__(self):
-        self.passengers=[]
+        pass
     
     def set_name(self, name):
         self.name = name
